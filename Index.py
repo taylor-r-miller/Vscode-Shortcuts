@@ -11,8 +11,8 @@ SHORTCUTS = {
         "path": 'Documents/Projects',
         "include_all":True 
         },
-    "work":{
-        "path": 'Documents/Work/Anthem',
+    "work":{ #example of only listing certain files
+        "path": 'Documents/Work',
         "include_all": False,
         "include":[ #exact dir name
 
