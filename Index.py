@@ -73,7 +73,7 @@ def Shortcuts():
                 print('Invalid choice. Select from list.')
  
     else:
-        dir_choice = info.get('include')[0].strip().replace(' ', '\ ')
+        dir_choice = files[0].strip().replace(' ', '\ ')
         command = f'cd && code {path}/{dir_choice}'
 
 
