@@ -15,7 +15,7 @@ SHORTCUTS = {
         "path": 'Documents/Work',
         "include_all": False,
         "include":[ #exact dir name
- 
+
         ]
     }
 }
@@ -41,7 +41,7 @@ def Shortcuts():
         osx_pattern = re.compile('^(/Users/.+?)/')
         full_path  = os.getcwd()
         base_path = f'{osx_pattern.search(full_path).group()}/'
-        abs_path = f'{base_path}{path}'
+        abs_path = f'{base_path}{path}'.replace(' ', '\ ') #handle for spaces in paths
         
     inlcude_all = info.get('include_all')
 
