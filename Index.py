@@ -2,8 +2,8 @@ import sys, os, subprocess, re
 
 
 #only supply a base dir if not on a mac 
-# BASE_DIR = '/Users/taylormiller/'
-BASE_DIR = None
+# BASE_PATH = '/Users/taylormiller/'
+BASE_PATH = None
 IGNORE = ['.DS_Store']
 
 SHORTCUTS = {
@@ -12,10 +12,10 @@ SHORTCUTS = {
         "include_all":True 
         },
     "work":{ #example of only listing certain files
-        "path": 'Documents/Work',
+        "path": 'Documents/Work/',
         "include_all": False,
         "include":[ #exact dir name
-
+  
         ]
     }
 }
@@ -34,14 +34,14 @@ def Shortcuts():
         return
     
     #handle for base dir being provided 
-    if BASE_DIR:
-        abs_path = f'{BASE_DIR}{path}'
+    if BASE_PATH:
+        abs_path = f'{BASE_PATH}{path}'
     else:
         #extract the base path so we can use relative paths in the shortcut dictionary     
         osx_pattern = re.compile('^(/Users/.+?)/')
         full_path  = os.getcwd()
-        base_dir = f'{osx_pattern.search(full_path).group()}/'
-        abs_path = f'{base_dir}{path}'
+        base_path = f'{osx_pattern.search(full_path).group()}/'
+        abs_path = f'{base_pathss}{path}'
         
     inlcude_all = info.get('include_all')
 
